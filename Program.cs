@@ -102,6 +102,50 @@
             int larguraConsole = Console.WindowWidth;
             Console.WriteLine($"Altura: {alturaConsole}   Largura: {larguraConsole}");
 
+            Console.WriteLine();
+
+            Console.WriteLine("Testando Guid");
+            Console.WriteLine(Funcoes.linhasSepararadoraSimples);
+            var id = Guid.NewGuid();
+            Console.WriteLine($"Guid id: {id}");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Testando Múltiplas Linhas");
+            Console.WriteLine(Funcoes.linhasSepararadoraSimples);
+            var sql01 = """
+                SELECT
+                    *
+                FROM
+                    produto
+            """;
+            Console.WriteLine(sql01);
+
+            Console.WriteLine();
+
+            Console.WriteLine("Testando Contains");
+            Console.WriteLine(Funcoes.linhasSepararadoraSimples);
+            var texto1 = "Meu nome é Márcio";
+            var texto2 = "marcio";
+            Console.WriteLine(texto1);
+            Console.WriteLine("Funcoes.RemoveAcentos(texto1)");
+            Console.WriteLine(Funcoes.RemoveAcentos(texto1));
+            Console.WriteLine(texto2);
+            Console.WriteLine("Funcoes.RemoveAcentos(texto1).Contains(texto2, StringComparison.OrdinalIgnoreCase)");
+            Console.WriteLine(Funcoes.RemoveAcentos(texto1).Contains(texto2, StringComparison.OrdinalIgnoreCase));
+
+            Console.WriteLine();
+
+            Console.WriteLine("Testando LeftStr e RightStr");
+            Console.WriteLine(Funcoes.linhasSepararadoraSimples);
+            string texto3 = "Marcio Grazianni";
+            string leftPart = Funcoes.LeftStr(texto3, 6);
+            string rightPart = Funcoes.RightStr(texto3, 9);
+
+            Console.WriteLine(texto3);
+            Console.WriteLine($"Funcoes.LeftStr 6: {leftPart}");
+            Console.WriteLine($"Funcoes.RightStr 9: {rightPart}");
+
             return 0;
         }
     }
