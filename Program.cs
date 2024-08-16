@@ -5,6 +5,7 @@
         static int Main(string[] args)
         {
             Console.Clear();
+            
             Console.WriteLine(Funcoes.linhasSepararadoraDupla);
 
             Console.WriteLine();
@@ -123,28 +124,28 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("Testando Contains");
+            Console.WriteLine("Testando Extended Extensions - Contains");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
             var texto1 = "Meu nome é Márcio";
-            var texto2 = "marcio";
+            var texto2 = "mARçíõ";
             Console.WriteLine(texto1);
-            Console.WriteLine("Funcoes.RemoveAcentos(texto1)");
-            Console.WriteLine(Funcoes.RemoveAcentos(texto1));
+            Console.WriteLine("texto1.RemoveAcentos()");
+            Console.WriteLine(texto1.RemoveAcentos());
             Console.WriteLine(texto2);
-            Console.WriteLine("Funcoes.RemoveAcentos(texto1).Contains(texto2, StringComparison.OrdinalIgnoreCase)");
-            Console.WriteLine(Funcoes.RemoveAcentos(texto1).Contains(texto2, StringComparison.OrdinalIgnoreCase));
+            Console.WriteLine("texto1.RemoveAcentos().Contains(texto2.RemoveAcentos())");
+            Console.WriteLine(texto1.RemoveAcentos().Contains(texto2.RemoveAcentos()));
 
             Console.WriteLine();
 
-            Console.WriteLine("Testando LeftStr e RightStr");
+            Console.WriteLine("Testando Extended Extensions - Left e Right");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
             string texto3 = "Marcio Grazianni";
-            string leftPart = Funcoes.LeftStr(texto3, 6);
-            string rightPart = Funcoes.RightStr(texto3, 9);
+            string leftTexto3 = texto3.Left(6);
+            string rightTexto3 = texto3.Right(9);
 
             Console.WriteLine(texto3);
-            Console.WriteLine($"Funcoes.LeftStr 6: {leftPart}");
-            Console.WriteLine($"Funcoes.RightStr 9: {rightPart}");
+            Console.WriteLine($"texto3.Left(6): {leftTexto3}");
+            Console.WriteLine($"texto3.Right(9): {rightTexto3}");
 
             return 0;
         }
