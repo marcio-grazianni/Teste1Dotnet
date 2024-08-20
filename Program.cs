@@ -5,7 +5,7 @@
         static int Main(string[] args)
         {
             Console.Clear();
-            
+
             Console.WriteLine(Funcoes.linhasSepararadoraDupla);
 
             Console.WriteLine();
@@ -28,7 +28,7 @@
 
             Console.WriteLine("Arrays");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
-            string[] textos_array = new string[2];
+            var textos_array = new string[2];
             textos_array[0] = "Marcio";
             textos_array[1] = "Grazianni";
             foreach (string texto in textos_array)
@@ -40,10 +40,10 @@
 
             Console.WriteLine("Listas");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
-            List<string> textos_lista = new();
-            textos_lista.Add("Grazianni");
-            textos_lista.Add("Oliveira");
-            foreach (string texto in textos_lista)
+            var textosLista = new List<string>();
+            textosLista.Add("Grazianni");
+            textosLista.Add("Oliveira");
+            foreach (string texto in textosLista)
             {
                 Console.WriteLine(texto);
             }
@@ -52,7 +52,7 @@
 
             Console.WriteLine("Dicionários");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
-            Dictionary<string, object> textos_dict = new Dictionary<string, object>
+            var textosDict = new Dictionary<string, object>
             {
                 { "nome", "Marcio" },
                 { "idade", 46 },
@@ -60,16 +60,16 @@
             };
 
             // Acessando valores
-            Console.WriteLine($"Nome: {textos_dict["nome"]}");
+            Console.WriteLine($"Nome: {textosDict["nome"]}");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
 
             // Adicionando um novo par chave-valor
-            textos_dict["country"] = "Brazil";
+            textosDict["country"] = "Brazil";
 
             // Iterando sobre o dicionário
-            foreach (KeyValuePair<string, object> kvp in textos_dict)
+            foreach (var chaveValor in textosDict)
             {
-                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+                Console.WriteLine($"{chaveValor.Key}: {chaveValor.Value}");
             }
 
             Console.WriteLine();
@@ -90,17 +90,17 @@
 
             Console.WriteLine("Testando GetType");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
-            string nome_cliente = "Marcio";
-            int idade_cliente = 46;
-            Console.WriteLine($"nome_cliente.GetType(): {nome_cliente.GetType()}");
-            Console.WriteLine($"idade_cliente.GetType(): {idade_cliente.GetType()}");
+            string nomeCliente = "Marcio";
+            int idadeCliente = 46;
+            Console.WriteLine($"nomeCliente.GetType(): {nomeCliente.GetType()}");
+            Console.WriteLine($"idadeCliente.GetType(): {idadeCliente.GetType()}");
 
             Console.WriteLine();
 
             Console.WriteLine("Testando Screen");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
-            int alturaConsole = Console.WindowHeight;
-            int larguraConsole = Console.WindowWidth;
+            var alturaConsole = Console.WindowHeight;
+            var larguraConsole = Console.WindowWidth;
             Console.WriteLine($"Altura: {alturaConsole}   Largura: {larguraConsole}");
 
             Console.WriteLine();
@@ -137,15 +137,15 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("Testando Extended Extensions - Left e Right");
+            Console.WriteLine("Testando Extended Extensions - Esquerda e Direita");
             Console.WriteLine(Funcoes.linhasSepararadoraSimples);
             string texto3 = "Marcio Grazianni";
-            string leftTexto3 = texto3.Left(6);
-            string rightTexto3 = texto3.Right(9);
+            string esquerdaTexto3 = texto3.Esquerda(6);
+            string direitaTexto3 = texto3.Direita(9);
 
             Console.WriteLine(texto3);
-            Console.WriteLine($"texto3.Left(6): {leftTexto3}");
-            Console.WriteLine($"texto3.Right(9): {rightTexto3}");
+            Console.WriteLine($"texto3.Esquerda(6): {esquerdaTexto3}");
+            Console.WriteLine($"texto3.Direita(9): {direitaTexto3}");
 
             return 0;
         }

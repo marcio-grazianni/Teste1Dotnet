@@ -5,7 +5,7 @@ namespace App.Extensions
 {
     public static class StringExtensions
     {
-        public static string Left(this string input, int length)
+        public static string Esquerda(this string input, int length)
         {
             // Verifica se o comprimento solicitado é maior que a string ou negativo
             if (length <= 0) return string.Empty;
@@ -14,7 +14,7 @@ namespace App.Extensions
             return input.Substring(0, length);
         }
 
-        public static string Right(this string input, int length)
+        public static string Direita(this string input, int length)
         {
             // Verifica se o comprimento solicitado é maior que a string ou negativo
             if (length <= 0) return string.Empty;
