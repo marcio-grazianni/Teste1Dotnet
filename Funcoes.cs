@@ -2,8 +2,8 @@ namespace Teste1
 {
     public class Funcoes
     {
-        public static String linhasSepararadoraSimples = "----------------------------------";
-        public static String linhasSepararadoraDupla = "==================================";
+        public static String linhasSepararadoraSimples = "--------------------------------------------------------------------";
+        public static String linhasSepararadoraDupla = "====================================================================";
         /// <summary>
         /// Retorna uma mensagem de boas-vindas para o nome fornecido.
         /// </summary>

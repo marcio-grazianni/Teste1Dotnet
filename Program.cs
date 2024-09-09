@@ -1,4 +1,6 @@
-﻿namespace Teste1
+﻿using System.Numerics;
+
+namespace Teste1
 {
     class Program
     {
@@ -146,6 +148,42 @@
             Console.WriteLine(texto3);
             Console.WriteLine($"texto3.Esquerda(6): {esquerdaTexto3}");
             Console.WriteLine($"texto3.Direita(9): {direitaTexto3}");
+
+            Console.WriteLine();
+
+            string nomeArquivoTeste = "Teste.txt";
+            Console.WriteLine($"Testando Gravação de arquivo - {nomeArquivoTeste}");
+            Console.WriteLine(Funcoes.linhasSepararadoraSimples);
+            using (var arquivo = new StreamWriter(nomeArquivoTeste))
+            {
+                arquivo.WriteLine("Marcio");
+                arquivo.WriteLine("Grazianni");
+                arquivo.WriteLine("");
+                arquivo.WriteLine("");
+                arquivo.WriteLine("Mascarenhas");
+                arquivo.WriteLine("Oliveira");
+                arquivo.WriteLine("");
+            }
+            Console.WriteLine($"Arquivo {nomeArquivoTeste} gravado com sucesso.");
+
+            Console.WriteLine();
+
+            Console.WriteLine($"Testando Leitura de arquivo - {nomeArquivoTeste}");
+            Console.WriteLine(Funcoes.linhasSepararadoraSimples);
+            int numeroLinha = 1;
+            string? conteudoLinha = null;
+            using (var arquivo = new StreamReader(nomeArquivoTeste))
+            {
+                while ((conteudoLinha = arquivo.ReadLine()) != null)
+                {
+                    if (conteudoLinha.Trim().Length == 0)
+                        continue;
+
+                    Console.WriteLine($"Linha {numeroLinha}: [{conteudoLinha}]");
+                    numeroLinha++;
+                }
+            }
+            Console.WriteLine($"Arquivo {nomeArquivoTeste} lido com sucesso.");
 
             return 0;
         }
